@@ -1,4 +1,4 @@
-import java.awt;
+import java.awt.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 import java.awt.event.MouseMotionListener;
@@ -29,7 +29,7 @@ public class TicTacToeGame implements ActionListener {
         frame.setBounds(0,0,800, 600);
         frame.getContentPane().setBackground(new Color(50, 50, 50));
         frame.setTitle("Tic Tac Toe");
-        panel.setPreferredSize(new Dimension(SCREEN_WIDTH, SCREEN_HEIGHT));
+        panel.setPreferredSize(new Dimension(800,600));
         panel.setLayout(null);
         frame.setVisible(true);
         textfield.setFont(new Font("Ink Free", Font.BOLD, 75));
@@ -40,7 +40,7 @@ public class TicTacToeGame implements ActionListener {
 
     
 
-    private void events(long delta) {
+    private void check_win(long delta) {
         if((mousePressedX >= 0 || mousePressedY >= 0) && gameWinner == '0') {
             int xIndex = (int) Math.floor(mousePressedX / 80);
             int yIndex = (int) Math.floor(mousePressedY / 60);
@@ -84,7 +84,7 @@ public class TicTacToeGame implements ActionListener {
         }
     }
 
-    private void nextMove() {
+    private void Movement() {
         if(currentMove == 'X')
             currentMove = 'O';
         else
